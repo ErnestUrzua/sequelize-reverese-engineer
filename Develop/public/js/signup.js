@@ -29,14 +29,15 @@ $(document).ready(function() {
       password: password
     })
       .then(function(data) {
-        window.location.replace("/members");
+        window.location.replace("/members"); //redirect to memebers page
         // If there's an error, handle it by throwing up a bootstrap alert
       })
       .catch(handleLoginErr);
   }
 
+  //function to handle errors
   function handleLoginErr(err) {
-    $("#alert .msg").text(err.responseJSON);
-    $("#alert").fadeIn(500);
+    $("#alert .msg").text(err.responseJSON);//grabs alert div and displays an error response
+    $("#alert").fadeIn(500);//fade in with input of 500
   }
 });

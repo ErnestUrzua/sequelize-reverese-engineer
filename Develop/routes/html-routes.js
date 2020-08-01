@@ -2,6 +2,7 @@
 var path = require("path");
 
 // Requiring our custom middleware for checking if a user is logged in
+// makes sure user is authenticated before accessing the pages
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
