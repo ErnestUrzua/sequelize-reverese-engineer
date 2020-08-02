@@ -1,5 +1,5 @@
-var passport = require("passport");
-var LocalStrategy = require("passport-local").Strategy;
+var passport = require("passport"); //require passport.js
+var LocalStrategy = require("passport-local").Strategy; //require passport as strategy
 
 var db = require("../models");
 
@@ -37,10 +37,11 @@ passport.use(new LocalStrategy(
 // In order to help keep authentication state across HTTP requests,
 // Sequelize needs to serialize and deserialize the user
 // Just consider this part boilerplate needed to make it all work
+// attaches the user id to req.session
 passport.serializeUser(function(user, cb) {
   cb(null, user);
 });
-
+//uses the users key to get the object
 passport.deserializeUser(function(obj, cb) {
   cb(null, obj);
 });
